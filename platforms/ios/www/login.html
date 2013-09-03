@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head><title>DAM 2013 - Deidesheim</title>
+    <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="../../dam_app_public/www/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../dam_app_public/www/js/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="../../dam_app_public/www/js/mobileScripts.js"></script>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet">
+    <script>
+        if (typeof(window.localStorage) != 'undefined') {
+            if (window.localStorage.getItem("status") == null) {
+                window.localStorage.setItem("status", 0)
+            }
+        }
+        else {
+            alert("window.localStorage, not defined");
+        }
+    </script>
+</head>
+<body>
+
+<div data-role="page" data-theme="b" data-content-theme="a">
+    <div data-role="header" data-theme="d">
+        <h1>dam2013.org</h1>
+    </div>
+    <div data-theme="c" class="formWrapperOuter">
+        <div class="formWrapper" id="formWrapper">
+            <div data-role="fieldcontain" class="formElement">
+                <label for="username">Benutzer:</label>
+                <input type="text" name="username" id="username" value="" placeholder="Benutzername"/>
+            </div>
+            <div data-role="fieldcontain" class="formElement">
+                <label for="username">Passwort:</label>
+                <input type="password" name="userpw" id="userpw" value="" placeholder="Passwort"/>
+            </div>
+            <div id="errorMessage" class="formElement hidden"></div>
+            <a id="loginButton" href="javascript:loginStart();" data-role="button" class="formElement">Login</a>
+
+            <div id="loginLoader" class="hidden">
+                <img id="loginloading" class="blockElement" src="img/loading.gif"/>
+                <label>loading...</label>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-theme="d" class="ui-bar" id="footerBar">
+        <h4>Copyright Dam 2013</h4>
+    </div>
+</div>
+</body>
+</html>
